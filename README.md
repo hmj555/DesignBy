@@ -1,6 +1,8 @@
 # DesignBy
 Home appliance design classification model
 
+
+```bash
 CNN/
 │
 ├── models/
@@ -13,3 +15,4 @@ CNN/
 ├── config.json           # 구성 파일 (질문 목록, 경로, 배치 크기 등 설정)
 ├── logs/                 # 학습 및 검증 로그 저장 디렉토리
 └── trained_models/       # 질문별로 저장된 학습 완료 모델 디렉토리
+``` 

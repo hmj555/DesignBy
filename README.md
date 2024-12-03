@@ -2,7 +2,7 @@
 Home appliance design classification model
 
 
-##### Structure
+#### Structure
 ```bash
 CNN/
 │
@@ -18,12 +18,12 @@ CNN/
 └── trained_models/       # 질문별로 저장된 학습 완료 모델 디렉토리
 ``` 
 
-##### Training for 22 questions
+#### Training for 22 questions
 ```bash
 python main.py
 ```
 
-##### Training for 1 questions
+#### Training for 1 questions
 ```bash
 python run.py
 ```

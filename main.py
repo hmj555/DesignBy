@@ -8,6 +8,15 @@ from utils import get_dataloader, format_filename
 from models.resnet import create_resnet18
 from train import test_model
 
+def get_paths(log_dir, model_dir, filename):
+    """
+    로그 및 모델 경로 생성
+    """
+    log_path = os.path.join(log_dir, filename, "train.log")
+    model_path = os.path.join(model_dir, filename, "model.pt")
+    graph_path = os.path.join(log_dir, filename, "training_graph.png")
+    return log_path, model_path, graph_path
+
 def main():
     # Config 파일 로드
     with open("config.json", "r") as config_file:
@@ -20,7 +29,7 @@ def main():
     log_dir = config["log_dir"]
     model_dir = config["model_dir"]
     device = config["device"]
-    summary_path = "results_summary.csv"
+    summary_path = os.path.join(log_dir, "results_summary.csv")
 
     # 결과 요약 CSV 초기화
     with open(summary_path, "w", newline="") as csvfile:
@@ -31,14 +40,11 @@ def main():
     for question in questions:
         print(f"Training for '{question}'")
         filename = format_filename(question)
-        question_log_dir = os.path.join(log_dir, filename)
-        question_model_dir = os.path.join(model_dir, filename)
-        os.makedirs(question_log_dir, exist_ok=True)
-        os.makedirs(question_model_dir, exist_ok=True)
+        log_path, model_path, graph_path = get_paths(log_dir, model_dir, filename)
 
-        log_path = os.path.join(question_log_dir, "train.log")
-        model_path = os.path.join(question_model_dir, "model.pt")
-        graph_path = os.path.join(question_log_dir, "training_graph.png")
+        # 디렉토리 생성
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        os.makedirs(os.path.dirname(model_path), exist_ok=True)
 
         # 모델 학습
         train_model(

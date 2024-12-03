@@ -1,0 +1,32 @@
+{
+    "base_path": "/data/gist/DesignBy_split_",
+    "batch_size": 16,
+    "epochs": 10,
+    "questions": [
+            "what is the score for the straight style?", 
+            "what is the score for the curved style?",
+            "what is the score for the static style", 
+            "what is the score for the dynamic style?",
+            "what is the score for the simple style?", 
+            "what is the score for the complex style?",
+            "what is the score for the functional style?", 
+            "what is the score for the emotional style?",
+            "what is the score for the natural style?", 
+            "what is the score for the artificial style?",
+            "what is the score for the luxurious style?", 
+            "what is the score for the universal style?",
+            "what is the score for the modern style?", 
+            "what is the score for the classic style?",
+            "what is the score for the well-balanced style?", 
+            "what is the score for the tense style?",
+            "what is the score for the achromatic color?", 
+            "what is the score for the chromatic color?",
+            "what is the score for the cold texture?", 
+            "what is the score for the warm texture?",
+            "what is the score for the hard texture?", 
+            "what is the score for the soft texture?"
+    ],
+    "log_dir": "logs",
+    "model_dir": "trained_models",
+    "device": "cuda"
+}
